@@ -77,3 +77,63 @@ String literals can also be prefixed with `r`, `b`, `u`.
 >>> help(str.isdigit)
 >>> help(str.format)
 ```
+
+## Modules
+
+When a `.py` file is brought into a running Python interpreter, it is called 
+a *module*. This is the in-memory representation of all of the Python code 
+in the file. A collection of modules in a directory is called a *package*.
+
+```Python
+import <module>
+<module>.foo
+<module>.bar
+
+from <module> import <var>
+from <module> import <var1>, <var2>, ...
+# use <var>, <var1>, <var2>
+# equivalent to
+import <module>
+var = <module>.<var>
+del <module>
+
+import <module> as <name>
+# equivalent to
+import <module>
+<name> = <module>
+del <module>
+<name>.foo
+<name>.bar
+
+from <module> import <var> as <name>
+from <module> import <var1> as <name1>, <var2> as <name2>, ...
+# equivalent to
+from <module> import <var>
+<name> = <var>
+del <var>
+```
+
+## Packages
+
+A collection of modules in the same directory is called a *package*. For the 
+package to be visible to Python, the directory must contain a special file 
+named `__init__.py`. The main purpose of the file is to signal to Python that 
+the directory is a package, and that other files in this directory whose names 
+end in `.py` are importable. This file does not need to have any code in it. 
+If it does, this code will be executed before any other modules in the package 
+are imported.
+
+*absolute imports*
+
+*implicit relative imports*
+
+*explicit relative imports* the `from` keyword must be used, and the module 
+name is prefixed by either `.` or `..`. `.` refers to the current package 
+level. `..` refers to the package level one higher.
+
+Useful modules in the Python standard library: `os`, `sys`, `math`, `re`, `subprocess`, `argparse`, `itertools`, `collections`, `decimal`, `random`, `csv`, `pdb`, `logging`
+
+
+# C3
+
+
